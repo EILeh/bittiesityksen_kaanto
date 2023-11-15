@@ -1,62 +1,80 @@
 #include "bitit.h"
 #include <stdlib.h>
 #include <stdio.h>
+#include <limits.h>
 
 void kaannaScharBitit(signed char *x)
 {
-
     int i;
-    signed char *ptr_y = x;
-    int *bit;
 
-    printf("%d\n", *ptr_y);
+    int bit;
 
+    printf("%d\n", *x);
 
     for (i = CHAR_BIT - 1; i >= 0; i--)
     {
-        bit = (*ptr_y >> i) & 1;
+        bit = (*x >> i) & 1;
         printf("%d", bit);
+
     }
+    *x = bit;
     printf("\n");
-/*
-
-    for (i = 0; i < CHAR_BIT; i++)
-    {
-        if ((x >> i) & 1)
-        {
-            oneBits++;
-        }
-        else
-        {
-            zeroBits++;
-        }
-    }
-    printf("%d\n", zeroBits);
-    printf("%d\n", oneBits);
-
-
-*/
 
 }
 
 void kaannaShortBitit(short *x)
 {
-    short *ptr_y = x;
+    short int i;
 
-    printf("%d\n", *ptr_y);
+    int bit;
+
+    printf("%d\n", *x);
+
+    for (i =sizeof(short int)*CHAR_BIT - 1; i >= 0; i--)
+    {
+        bit = (*x >> i) & 1;
+        printf("%d", bit);
+
+    }
+    *x = bit;
+    printf("\n");
 }
 
 void kaannaIntBitit(int *x)
 {
-    int *ptr_y = x;
+    int i;
 
-    printf("%d\n", *ptr_y);
+    int bit;
+
+    printf("%d\n", *x);
+
+    for (i = sizeof(int)*CHAR_BIT- 1; i >= 0; i--)
+    {
+        bit = (*x >> i) & 1;
+        printf("%d", bit);
+
+    }
+    *x = bit;
+    printf("\n");
+
 }
 
 void kaannaLongBitit(long *x)
 {
+    int i;
 
-    long *ptr_y = x;
+    int bit;
 
-    printf("%ld", *ptr_y);
+    printf("%d\n", *x);
+
+    for (i =sizeof(long int)*CHAR_BIT- 1; i >= 0; i--)
+    {
+        bit = (*x >> i) & 1;
+        printf("%ld", bit);
+
+    }
+    *x = bit;
+    printf("\n");
+
+
 }

@@ -3,23 +3,25 @@
 
 int main(int argc, char *argv[])
 {
-    short int x;
-    int xInt;
-    signed char schar_x;
-    long int xLong;
-    xLong = atoi(argv[1]);
-    schar_x = xLong;
+    long int lx = 2015;
+    signed char cx = lx;
+    short sx = lx;
+    int ix = lx;
 
-    kaannaScharBitit(&schar_x);
+    kaannaScharBitit(&cx);
+
     printf("\n");
 
-    kaannaShortBitit(&x);
+    kaannaShortBitit(&sx);
+
     printf("\n");
 
-    kaannaIntBitit(&xInt);
+    kaannaIntBitit(&ix);
+
     printf("\n");
 
-    kaannaLongBitit(&xLong);
+    kaannaLongBitit(&lx);
+
 
 
     return 0;
