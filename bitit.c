@@ -7,74 +7,77 @@ void kaannaScharBitit(signed char *x)
 {
     int i;
 
-    int bit;
-
-    printf("%d\n", *x);
-
-    for (i = CHAR_BIT - 1; i >= 0; i--)
+    /*
+    * K‰yd‰‰n l‰pi muuttujan x bittiesityksen puoliv‰liin.
+    */
+    for (i = 0; i < CHAR_BIT / 2; i++)
     {
-        bit = (*x >> i) & 1;
-        printf("%d", bit);
+        /*
+        * Muuttuja j k‰y l‰pi bittijonoa alkaen viimeisest‰
+        * indeksist‰.
+        */
+        int j = CHAR_BIT - 1 - i;
+        /*
+        * Tallennetaan muuttujiin bit_i ja bit_j bittiesitykset.
+        */
+        int bit_i = (*x >> i) & 1;
+        int bit_j = (*x >> j) & 1;
 
+        /*
+        * Jos bit_i ei ole sama kuin bit_j, bittien arvot
+        * vaihdetaan kesken‰‰n, jos bitin arvo on 1.
+        */
+        if (bit_i != bit_j)
+        {
+            *x ^= (1 << i) | (1 << j);
+        }
     }
-    *x = bit;
-    printf("\n");
-
 }
 
 void kaannaShortBitit(short *x)
 {
-    short int i;
-
-    int bit;
-
-    printf("%d\n", *x);
-
-    for (i =sizeof(short int)*CHAR_BIT - 1; i >= 0; i--)
+    int i;
+    for (i = 0; i < sizeof(short) * CHAR_BIT / 2; i++)
     {
-        bit = (*x >> i) & 1;
-        printf("%d", bit);
+        int j = sizeof(short) * CHAR_BIT - 1 - i;
+        int bit_i = (*x >> i) & 1;
+        int bit_j = (*x >> j) & 1;
 
+        if (bit_i != bit_j)
+        {
+            *x ^= (1 << i) | (1 << j);
+        }
     }
-    *x = bit;
-    printf("\n");
 }
 
 void kaannaIntBitit(int *x)
 {
     int i;
-
-    int bit;
-
-    printf("%d\n", *x);
-
-    for (i = sizeof(int)*CHAR_BIT- 1; i >= 0; i--)
+    for (i = 0; i < sizeof(int) * CHAR_BIT / 2; i++)
     {
-        bit = (*x >> i) & 1;
-        printf("%d", bit);
+        int j = sizeof(int) * CHAR_BIT - 1 - i;
+        int bit_i = (*x >> i) & 1;
+        int bit_j = (*x >> j) & 1;
 
+        if (bit_i != bit_j)
+        {
+            *x ^= (1 << i) | (1 << j);
+        }
     }
-    *x = bit;
-    printf("\n");
-
 }
 
 void kaannaLongBitit(long *x)
 {
     int i;
-
-    int bit;
-
-    printf("%d\n", *x);
-
-    for (i =sizeof(long int)*CHAR_BIT- 1; i >= 0; i--)
+    for (i = 0; i < sizeof(long) * CHAR_BIT / 2; i++)
     {
-        bit = (*x >> i) & 1;
-        printf("%ld", bit);
+        int j = sizeof(long) * CHAR_BIT - 1 - i;
+        int bit_i = (*x >> i) & 1;
+        int bit_j = (*x >> j) & 1;
 
+        if (bit_i != bit_j)
+        {
+            *x ^= (1L << i) | (1L << j);
+        }
     }
-    *x = bit;
-    printf("\n");
-
-
 }

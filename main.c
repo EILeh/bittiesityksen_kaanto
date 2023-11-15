@@ -3,7 +3,7 @@
 
 int main(int argc, char *argv[])
 {
-    long int lx = 2015;
+    long int lx = -1000;
     signed char cx = lx;
     short sx = lx;
     int ix = lx;
