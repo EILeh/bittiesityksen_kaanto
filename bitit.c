@@ -5,24 +5,20 @@
 void kaannaScharBitit(signed char *x)
 {
 
-    signed char y;
-
-    signed char bit;
-
-
-    y = x;
-    signed char *ptr_y = &x;
+    int i;
+    signed char *ptr_y = x;
+    int *bit;
 
     printf("%d\n", *ptr_y);
 
-/*
+
     for (i = CHAR_BIT - 1; i >= 0; i--)
     {
-        bit = (x* >> i) & 1;
+        bit = (*ptr_y >> i) & 1;
         printf("%d", bit);
     }
     printf("\n");
-
+/*
 
     for (i = 0; i < CHAR_BIT; i++)
     {
@@ -41,4 +37,26 @@ void kaannaScharBitit(signed char *x)
 
 */
 
+}
+
+void kaannaShortBitit(short *x)
+{
+    short *ptr_y = x;
+
+    printf("%d\n", *ptr_y);
+}
+
+void kaannaIntBitit(int *x)
+{
+    int *ptr_y = x;
+
+    printf("%d\n", *ptr_y);
+}
+
+void kaannaLongBitit(long *x)
+{
+
+    long *ptr_y = x;
+
+    printf("%ld", *ptr_y);
 }
